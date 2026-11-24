@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ถึงคิม 💗</title>
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffe1ec, #ffd1f5, #fff0f5);
+  font-family: sans-serif;
+  overflow: hidden;
+}
+.card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 30px;
+  text-align: center;
+  width: 85%;
+  max-width: 350px;
+  box-shadow: 0 10px 30px #e8a9c566;
+}
+.heart {
+  font-size: 65px;
+  animation: beat 1s infinite;
+}
+h1 {
+  color: #ff69a6;
+}
+p {
+  color: #a15d7c;
+  font-size: 18px;
+}
+button {
+  border: none;
+  padding: 13px 22px;
+  border-radius: 30px;
+  font-size: 16px;
+  margin: 8px;
+  cursor: pointer;
+}
+.yes {
+  background: #ff75ad;
+  color: white;
+}
+.no {
+  background: #ffe3ef;
+  color: #d65d91;
+}
+#message {
+  color: #ff5d9e;
+  font-size: 19px;
+  margin-top: 20px;
+}
+@keyframes beat {
+  50% { transform: scale(1.2); }
+}
+.floating {
+  position: absolute;
+  animation: float 5s linear infinite;
+  opacity: 0.6;
+}
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="heart">💗</div>
+  <h1>ถึงคิม 💌</h1>
+  <p>คิมมีอะไรจะบอก...</p>
+  <h2 style="color:#ff75ad;">เป็นแฟนกันไหม? 🥺</h2>
+
+  <button class="yes" onclick="yes()">ตกลง 💖</button>
+  <button class="no" onclick="no()">ขอคิดดูก่อน 🙈</button>
+
+  <div id="message"></div>
+</div>
+
+<script>
+function yes() {
+  document.getElementById("message").innerHTML =
+    "เย้! ขอบคุณนะ 💗🌷";
+}
+function no() {
+  document.getElementById("message").innerHTML =
+    "ไม่เป็นไรนะ คิมค่อย ๆ คิดก็ได้ 😊💌";
+}
+
+for (let i = 0; i < 20; i++) {
+  let h = document.createElement("div");
+  h.className = "floating";
+  h.innerHTML = "💗";
+  h.style.left = Math.random() * 100 + "vw";
+  h.style.animationDuration = (3 + Math.random() * 5) + "s";
+  h.style.fontSize = (15 + Math.random() * 25) + "px";
+  document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
